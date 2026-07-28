@@ -1,0 +1,150 @@
+<meta charset="utf-8">
+<title>High Tea Invitation Template</title>
+
+<!-- =====================================================================
+     EDIT EVERYTHING BETWEEN THE LINES BELOW. NOTHING ELSE.
+     Save the file, then open it in Chrome to see it.
+     To add photos: put the photo files in the SAME FOLDER as this file
+     and write the exact file name (including .jpg or .png) below.
+     Leave a photo blank ("") and it shows a dashed box instead.
+     ===================================================================== -->
+<script>
+const INVITE = {
+  name:      "HER NAME",
+  age:       "10",
+  script:    "is turning",          // the little handwritten line above the name
+  occasion:  "High Tea",
+  date:      "Saturday 12 September",
+  time:      "2:00pm to 4:30pm",
+  venue:     "VENUE NAME",
+  address:   "Street address, suburb",
+  rsvp:      "RSVP to Sandra 0400 000 000 by Friday 4 September",
+  note:      "Frocks and fancy hats encouraged",
+
+  photoMain:  "",     // e.g. "murphy-1.jpg"  (the big one)
+  photoLeft:  "",     // e.g. "murphy-2.jpg"  (small, left)
+  photoRight: "",     // e.g. "murphy-3.jpg"  (small, right)
+
+  // Colours. Swap these if you want a different look.
+  // Sage + cream:  bg #F6F1E7  ink #2F3B32  accent #8C9C7E  gold #B8935A
+  // Rose + cream:  bg #FBF2EF  ink #4A2C2A  accent #C98B8B  gold #B8935A
+  // Lilac + cream: bg #F5F1F8  ink #3A2E45  accent #A48CC0  gold #B8935A
+  bg:     "#FBF2EF",
+  ink:    "#4A2C2A",
+  accent: "#C98B8B",
+  gold:   "#B8935A",
+};
+</script>
+<!-- ===================== STOP EDITING HERE ============================ -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Caveat:wght@500;600&family=Space+Grotesk:wght@400;500&display=swap');
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#ddd; display:flex; justify-content:center; padding:40px 20px;
+       font-family:'Cormorant Garamond', Georgia, serif; }
+
+.card {
+  width:1080px; height:1350px; position:relative; overflow:hidden;
+  display:flex; flex-direction:column; align-items:center;
+  padding:62px 84px 56px;
+  box-shadow:0 24px 60px rgba(0,0,0,.22);
+}
+.frame { position:absolute; inset:34px; border:2px solid; opacity:.45; pointer-events:none; }
+.frame:after { content:""; position:absolute; inset:12px; border:1px solid; opacity:.55; }
+
+.corner { position:absolute; width:120px; height:120px; opacity:.45; }
+.corner svg { width:100%; height:100%; }
+.c-tl { top:52px;  left:52px; }
+.c-br { bottom:52px; right:52px; transform:rotate(180deg); }
+
+.eyebrow { font-family:'Space Grotesk',sans-serif; font-size:22px; font-weight:500;
+  letter-spacing:.42em; text-transform:uppercase; margin-top:16px; }
+
+.script { font-family:'Caveat',cursive; font-size:56px; line-height:1; margin-top:22px; }
+
+.name { font-size:126px; line-height:.92; font-weight:600; letter-spacing:.01em;
+  text-transform:uppercase; margin-top:6px; }
+
+.age-row { display:flex; align-items:center; gap:24px; margin-top:16px; }
+.rule { height:1px; width:100px; }
+.age { font-size:52px; font-style:italic; font-weight:400; }
+
+.photos { display:flex; align-items:flex-end; justify-content:center; gap:24px; margin-top:34px; }
+.ph { background-size:cover; background-position:center; border-radius:999px;
+      border:5px solid; box-shadow:0 10px 26px rgba(0,0,0,.14);
+      display:flex; align-items:center; justify-content:center;
+      font-family:'Space Grotesk',sans-serif; font-size:15px; letter-spacing:.18em;
+      text-transform:uppercase; text-align:center; opacity:1; }
+.ph.empty { border-style:dashed; opacity:.5; }
+.ph-main  { width:300px; height:376px; border-radius:150px/188px; }
+.ph-small { width:180px; height:226px; border-radius:90px/113px; }
+
+.occasion { font-family:'Caveat',cursive; font-size:76px; line-height:1; margin-top:32px; }
+
+.details { margin-top:18px; text-align:center; }
+.details .line { font-size:38px; line-height:1.45; }
+.details .venue { font-size:40px; font-weight:600; margin-top:12px; }
+.details .addr  { font-size:31px; font-style:italic; opacity:.8; }
+
+.note { font-family:'Caveat',cursive; font-size:40px; margin-top:22px; }
+
+.rsvp { font-family:'Space Grotesk',sans-serif; font-size:21px; font-weight:500;
+  letter-spacing:.16em; text-transform:uppercase; margin-top:auto; padding-top:26px;
+  text-align:center; line-height:1.7; }
+
+@media print {
+  body { background:#fff; padding:0; }
+  .card { box-shadow:none; }
+}
+</style>
+
+<div class="card" id="card"></div>
+
+<script>
+const I = INVITE;
+const flourish = `<svg viewBox="0 0 100 100" fill="none" stroke="${I.gold}" stroke-width="1.6">
+  <path d="M4 40 C4 18, 18 4, 40 4"/><path d="M4 52 C4 22, 22 4, 52 4"/>
+  <circle cx="10" cy="10" r="3.2" fill="${I.gold}" stroke="none"/></svg>`;
+
+function photo(src, cls, label) {
+  if (src) return `<div class="ph ${cls}" style="background-image:url('${src}');border-color:${I.gold}"></div>`;
+  return `<div class="ph ${cls} empty" style="border-color:${I.accent};color:${I.accent}">${label}</div>`;
+}
+
+document.getElementById('card').style.background = I.bg;
+document.getElementById('card').style.color = I.ink;
+document.getElementById('card').innerHTML = `
+  <div class="frame" style="border-color:${I.gold}"></div>
+  <div class="corner c-tl">${flourish}</div>
+  <div class="corner c-br">${flourish}</div>
+
+  <div class="eyebrow" style="color:${I.accent}">You are invited</div>
+  <div class="script" style="color:${I.accent}">${I.script}</div>
+  <div class="name">${I.name}</div>
+  <div class="age-row">
+    <div class="rule" style="background:${I.gold}"></div>
+    <div class="age" style="color:${I.gold}">${I.age} today</div>
+    <div class="rule" style="background:${I.gold}"></div>
+  </div>
+
+  <div class="photos">
+    ${photo(I.photoLeft,  'ph-small', 'photo')}
+    ${photo(I.photoMain,  'ph-main',  'main photo')}
+    ${photo(I.photoRight, 'ph-small', 'photo')}
+  </div>
+
+  <div class="occasion" style="color:${I.accent}">${I.occasion}</div>
+
+  <div class="details">
+    <div class="line">${I.date}</div>
+    <div class="line">${I.time}</div>
+    <div class="venue">${I.venue}</div>
+    <div class="addr">${I.address}</div>
+  </div>
+
+  ${I.note ? `<div class="note" style="color:${I.gold}">${I.note}</div>` : ''}
+
+  <div class="rsvp" style="color:${I.accent}">${I.rsvp}</div>
+`;
+</script>

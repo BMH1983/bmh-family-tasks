@@ -1,0 +1,68 @@
+[
+  {
+    "bg": "#F06038", "fg": "#FCD9BE", "accent": "#FCD9BE",
+    "kicker": "Claude Foundations &middot; 18 September",
+    "h": "5 GONE.<br>5 LEFT<br>AT $595.", "hclass": "h-lg",
+    "p": ["Then it's $695."]
+  },
+  {
+    "bg": "#FCD9BE", "fg": "#2A1A12", "accent": "#F06038",
+    "kicker": "Where we're at",
+    "h": "20 seats<br>in the room.", "hclass": "h-md",
+    "p": ["The first 10 tickets are $595. Five of those are now sold.", "When the ten are gone, it's $695. That's it."]
+  },
+  {
+    "bg": "#D6F74C", "fg": "#2A1A12", "accent": "#8C9EFF",
+    "kicker": "A thing that happened",
+    "h": "Everything in my algorithm is about Claude.", "hclass": "h-sm", "font": "fraunces",
+    "p": ["So I saw an ad for another business, super corporate, also doing Claude training face to face in Adelaide. Pretty much the same outcomes as us.", "They're charging $1,500 + GST."]
+  },
+  {
+    "bg": "#8C9EFF", "fg": "#2A1A12", "accent": "#FCD9BE",
+    "h": "Fuck...<br>I need to<br>charge more.", "hclass": "h-md", "font": "fraunces"
+  },
+  {
+    "bg": "#F06038", "fg": "#FCD9BE", "accent": "#D6F74C",
+    "kicker": "So here's the honest bit",
+    "h": "Round two<br>won't be<br>$595.", "hclass": "h-lg",
+    "p": ["This is the first ever Claude Foundations day."]
+  },
+  {
+    "bg": "#FCD9BE", "fg": "#2A1A12", "accent": "#8C9EFF",
+    "kicker": "The day",
+    "h": "Friday<br>18 September", "hclass": "h-sm",
+    "box": ["9:30 to 3:30", "Studio Safari, Norwood", "20 seats. Delicious food and drinks."],
+    "p": ["This will not be like any boring corporate training session."]
+  },
+  {
+    "bg": "#D6F74C", "fg": "#2A1A12", "accent": "#F06038",
+    "kicker": "What you walk out with",
+    "h": "Set up.<br>Not sold to.", "hclass": "h-md",
+    "list": [
+      "Claude set up properly for your business",
+      "Your bible and your projects built, so it knows your business inside out",
+      "Everything moved over from ChatGPT, if that's where you've been"
+    ]
+  },
+  {
+    "bg": "#D6F74C", "fg": "#2A1A12", "accent": "#8C9EFF",
+    "kicker": "What you walk out with",
+    "h": "And the<br>good stuff.", "hclass": "h-md",
+    "list": [
+      "Your voice skill, so it writes like you",
+      "Claude connected to the outside world: emails, your Drive, your calendar",
+      "How to spot when it's lying to you. Which it absolutely will."
+    ]
+  },
+  {
+    "bg": "#8C9EFF", "fg": "#2A1A12", "accent": "#FCD9BE",
+    "kicker": "Why I keep going on about this",
+    "h": "The uptake is low and I know why.", "hclass": "h-sm", "font": "fraunces",
+    "p": ["It feels overwhelming. We have enough going on.", "So we are going to sit next to you until the overwhelm passes. And it will."]
+  },
+  {
+    "bg": "#F06038", "fg": "#FCD9BE", "accent": "#D6F74C",
+    "h": "COME<br>LEARN<br>CLAUDE", "hclass": "h-lg",
+    "box": ["5 tickets left at $595, then it's $695.", "Two payments of $325 if that works better, until Friday 14 August.", "Link in bio."]
+  }
+]
