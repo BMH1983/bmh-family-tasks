@@ -1,0 +1,358 @@
+<meta charset="utf-8">
+<title>Murphy's High Tea — A5 Invitation</title>
+
+<!-- ======================================================================
+     MURPHY'S 10TH HIGH TEA — A5 INVITATION
+     Edit the block below. Then Ctrl+P and Save as PDF for the printer.
+     ====================================================================== -->
+<script>
+const INVITE = {
+  name:    "MURPHY",
+  age:     "10th",
+  day:     "SUNDAY",
+  dayNum:  "16th",
+  month:   "AUGUST",
+  time:    "2PM - 5PM",
+  venue:   "PRICES FRESH, HILLCREST",
+  rsvp:    "RSVP TO SANDRA ON 0400 000 000 BY SUNDAY 9 AUGUST",
+
+  // Set to true when you send it to the printer (adds 3mm bleed all round).
+  // Leave false for printing at home or viewing on screen.
+  bleed:   false,
+};
+</script>
+<!-- ========================= STOP EDITING HERE ========================== -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Parisienne&family=Space+Grotesk:wght@400;500&display=swap');
+
+:root {
+  --plum:   #4A2E63;   /* deep purple, main ink */
+  --grape:  #8B5FBF;   /* accent purple */
+  --lilac:  #C9A9E3;   /* soft purple */
+  --mist:   #EDE2F6;   /* pale purple wash */
+  --cream:  #FBF7FD;   /* background */
+  --rose:   #B98BA8;   /* muted rose for the script word */
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#cfc6d6; display:flex; justify-content:center; padding:12mm; }
+
+.card {
+  width:148mm; height:210mm; position:relative; overflow:hidden;
+  background:
+    radial-gradient(120mm 90mm at 18% 12%,  #F3E9FB 0%, rgba(243,233,251,0) 62%),
+    radial-gradient(110mm 80mm at 86% 78%,  #EFE4F8 0%, rgba(239,228,248,0) 60%),
+    var(--cream);
+  color:var(--plum);
+  font-family:'Cormorant Garamond', Georgia, serif;
+  font-variant-numeric:lining-nums; font-feature-settings:'lnum' 1;
+  box-shadow:0 8mm 20mm rgba(0,0,0,.25);
+  display:flex; flex-direction:column; align-items:center;
+  padding:13mm 12mm 10mm;
+}
+.card.bleed { width:154mm; height:216mm; padding:16mm 15mm 13mm; }
+
+/* soft watercolour blooms */
+.bloom { position:absolute; border-radius:50%; filter:blur(9mm); opacity:.5; }
+.bloom.a { width:70mm; height:60mm; background:#DCC7EF; top:-14mm; right:-16mm; }
+.bloom.b { width:56mm; height:50mm; background:#E7D6F3; bottom:-12mm; left:-14mm; }
+.bloom.c { width:44mm; height:38mm; background:#F0E1F7; top:44%; right:-12mm; }
+
+.inner { position:relative; z-index:2; width:100%; height:100%;
+         display:flex; flex-direction:column; align-items:center; }
+
+/* ---------- masthead ---------- */
+.masthead { position:relative; text-align:center; width:100%; padding-right:20mm; }
+.hightea {
+  font-size:16.5mm; line-height:.94; font-weight:400;
+  letter-spacing:.10em; text-transform:uppercase;
+}
+.party {
+  font-family:'Parisienne', cursive; color:var(--rose);
+  font-size:18mm; line-height:1;
+  position:absolute; right:2mm; top:13mm; transform:rotate(-5deg);
+}
+
+/* ---------- middle: side text + character ---------- */
+.stage { position:relative; width:100%; flex:1;
+         display:flex; align-items:flex-start; justify-content:center; margin-top:1mm; }
+
+.side {
+  position:absolute; top:30mm; width:34mm; text-align:center;
+  font-size:3.5mm; line-height:1.9; letter-spacing:.16em;
+  text-transform:uppercase; font-weight:500;
+}
+.side.left  { left:-1mm; }
+.side.right { right:-1mm; }
+.side .big { font-size:4.6mm; letter-spacing:.10em; }
+
+.treat { position:absolute; width:18mm; }
+.treat.cupcake { left:7mm;  top:8mm;  transform:rotate(-7deg); }
+.treat.cookie  { right:7mm; top:9mm;  transform:rotate(9deg); }
+
+.girl { width:68mm; margin-top:0; }
+
+/* ---------- details ---------- */
+.details { width:100%; text-align:center; margin-top:auto; }
+
+.dateline {
+  display:flex; align-items:center; justify-content:center; gap:3.5mm;
+  font-size:5.4mm; letter-spacing:.16em; text-transform:uppercase; font-weight:500;
+}
+.dateline .num { font-family:'Parisienne',cursive; color:var(--grape);
+  font-size:9.5mm; letter-spacing:0; text-transform:none; line-height:1; }
+.hr { height:.35mm; background:var(--lilac); width:100%; margin:2.6mm 0 2.4mm; }
+
+.time  { font-size:5.6mm; letter-spacing:.20em; font-weight:600; }
+.venue { font-size:4.1mm; letter-spacing:.16em; text-transform:uppercase;
+         margin-top:3.4mm; font-weight:500; }
+.rsvp  { font-family:'Space Grotesk',sans-serif; font-size:2.9mm; font-weight:400;
+         letter-spacing:.13em; text-transform:uppercase; color:var(--grape);
+         margin-top:2.6mm; }
+
+@media print {
+  body { background:#fff; padding:0; }
+  .card { box-shadow:none; }
+  @page { size:148mm 210mm; margin:0; }
+}
+</style>
+
+<div class="card" id="card"></div>
+
+<script>
+const I = INVITE;
+
+/* ---------------- the girl: Murphy, hand-built ---------------- */
+const GIRL = `
+<svg viewBox="0 0 400 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hairG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#E08A4E"/>
+      <stop offset="55%" stop-color="#D2703A"/>
+      <stop offset="100%" stop-color="#BB5B2C"/>
+    </linearGradient>
+    <linearGradient id="dressG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#A87BD4"/>
+      <stop offset="100%" stop-color="#8B5FBF"/>
+    </linearGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="7" cy="7" r="3.1" fill="#FBF7FD" opacity=".85"/>
+      <circle cx="20" cy="20" r="3.1" fill="#FBF7FD" opacity=".85"/>
+    </pattern>
+    <radialGradient id="blush">
+      <stop offset="0%" stop-color="#F0A9A0" stop-opacity=".75"/>
+      <stop offset="100%" stop-color="#F0A9A0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ===== shadow on ground ===== -->
+  <ellipse cx="200" cy="676" rx="86" ry="11" fill="#C9A9E3" opacity=".38"/>
+
+  <!-- ===== hair behind ===== -->
+  <path d="M112 178 C104 250 108 322 122 372 C132 344 136 300 138 262
+           C150 300 152 348 148 384 L252 384 C248 348 250 300 262 262
+           C264 300 268 344 278 372 C292 322 296 250 288 178 Z" fill="url(#hairG)"/>
+  <path d="M118 196 C114 262 118 320 128 362" stroke="#C4642F" stroke-width="4"
+        fill="none" opacity=".55" stroke-linecap="round"/>
+  <path d="M282 196 C286 262 282 320 272 362" stroke="#C4642F" stroke-width="4"
+        fill="none" opacity=".55" stroke-linecap="round"/>
+
+  <!-- ===== legs (start under the dress) ===== -->
+  <path d="M170 440 L168 606 L197 606 L198 440 Z" fill="#F7DCC5"/>
+  <path d="M202 440 L203 606 L232 606 L230 440 Z" fill="#F7DCC5"/>
+  <!-- socks -->
+  <path d="M167 592 L168 620 L198 620 L197 592 Z" fill="#FBF7FD"/>
+  <path d="M203 592 L202 620 L232 620 L233 592 Z" fill="#FBF7FD"/>
+  <path d="M167 597 q15 7 30 0" stroke="#E6DCEE" stroke-width="2.5" fill="none"/>
+  <path d="M203 597 q15 7 30 0" stroke="#E6DCEE" stroke-width="2.5" fill="none"/>
+  <!-- mary janes -->
+  <path d="M158 618 q19 -5 38 0 l2 24 q-22 8 -43 0 Z" fill="#8B5FBF"/>
+  <path d="M204 618 q19 -5 38 0 l2 24 q-22 8 -43 0 Z" fill="#8B5FBF"/>
+  <path d="M160 627 q18 4 35 0" stroke="#6E45A0" stroke-width="3.2" fill="none"/>
+  <path d="M206 627 q18 4 35 0" stroke="#6E45A0" stroke-width="3.2" fill="none"/>
+
+  <!-- ===== blouse body ===== -->
+  <path d="M148 296 q52 -22 104 0 l10 96 q-62 20 -124 0 Z" fill="#FDFAFF"/>
+
+  <!-- ===== pinafore dress ===== -->
+  <path d="M154 322 q46 -16 92 0 l30 152 q-76 26 -152 0 Z" fill="url(#dressG)"/>
+  <path d="M154 322 q46 -16 92 0 l30 152 q-76 26 -152 0 Z" fill="url(#dots)"/>
+  <!-- straps -->
+  <path d="M166 322 l10 -34 q10 -6 16 -2 l-8 36 Z" fill="#8B5FBF"/>
+  <path d="M234 322 l-10 -34 q-10 -6 -16 -2 l8 36 Z" fill="#8B5FBF"/>
+  <!-- waist tie + bow -->
+  <path d="M158 392 q42 14 84 0 l2 12 q-44 16 -88 0 Z" fill="#6E45A0" opacity=".85"/>
+  <path d="M186 396 q-16 -12 -22 2 q10 12 22 4 Z" fill="#F5E9FB"/>
+  <path d="M214 396 q16 -12 22 2 q-10 12 -22 4 Z" fill="#F5E9FB"/>
+  <circle cx="200" cy="400" r="6" fill="#F5E9FB"/>
+  <!-- hem -->
+  <path d="M144 468 q56 24 112 0" stroke="#6E45A0" stroke-width="4" fill="none" opacity=".45"/>
+
+  <!-- ===== arms, drawn over the dress ===== -->
+  <!-- puff sleeves -->
+  <ellipse cx="140" cy="332" rx="30" ry="35" fill="#FDFAFF"/>
+  <ellipse cx="260" cy="332" rx="30" ry="35" fill="#FDFAFF"/>
+  <path d="M114 350 q26 12 52 0" stroke="#E9DFF2" stroke-width="3" fill="none"/>
+  <path d="M234 350 q26 12 52 0" stroke="#E9DFF2" stroke-width="3" fill="none"/>
+  <!-- left forearm, hanging down -->
+  <path d="M120 352 q-5 42 5 76 l26 -5 q-10 -35 -5 -68 Z" fill="#F7DCC5"/>
+  <ellipse cx="137" cy="436" rx="15" ry="13" fill="#F9E2D0"/>
+  <!-- right forearm, bent up across the body -->
+  <path d="M282 348 q7 32 -12 56 l-25 -16 q14 -19 11 -44 Z" fill="#F7DCC5"/>
+  <ellipse cx="258" cy="412" rx="15" ry="13" fill="#F9E2D0"/>
+
+  <!-- ===== handbag hanging from the left hand ===== -->
+  <path d="M126 440 q11 -22 24 0" stroke="#8B5FBF" stroke-width="4" fill="none"/>
+  <path d="M118 448 q19 -7 38 0 l6 44 q-25 9 -50 0 Z" fill="#C9A9E3"/>
+  <circle cx="137" cy="470" r="5" fill="#FBF7FD"/>
+
+  <!-- ===== teacup in the right hand ===== -->
+  <ellipse cx="266" cy="406" rx="26" ry="6" fill="#FDFAFF" stroke="#D9C7E8" stroke-width="2"/>
+  <path d="M244 384 q22 -6 44 0 l-5 20 q-17 5 -34 0 Z" fill="#FDFAFF" stroke="#D9C7E8" stroke-width="2.5"/>
+  <ellipse cx="266" cy="385" rx="22" ry="5.5" fill="#E8D3F2"/>
+  <path d="M289 388 q12 3 10 12 q-2 8 -12 7" stroke="#D9C7E8" stroke-width="2.5" fill="none"/>
+  <path d="M257 372 q5 -9 -2 -15 M274 372 q5 -9 -2 -15" stroke="#D9C7E8"
+        stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".8"/>
+
+  <!-- ===== neck ===== -->
+  <path d="M182 252 h36 v42 q-18 10 -36 0 Z" fill="#EFC7AE"/>
+
+  <!-- ===== face ===== -->
+  <ellipse cx="200" cy="176" rx="80" ry="90" fill="#F9E2D0"/>
+  <!-- ears -->
+  <ellipse cx="122" cy="184" rx="12" ry="17" fill="#F9E2D0"/>
+  <ellipse cx="278" cy="184" rx="12" ry="17" fill="#F9E2D0"/>
+
+  <!-- blush -->
+  <ellipse cx="154" cy="200" rx="24" ry="16" fill="url(#blush)"/>
+  <ellipse cx="246" cy="200" rx="24" ry="16" fill="url(#blush)"/>
+
+  <!-- freckles -->
+  <g fill="#D99A76" opacity=".85">
+    <circle cx="164" cy="196" r="2.4"/><circle cx="176" cy="204" r="2.1"/>
+    <circle cx="152" cy="206" r="2.2"/><circle cx="170" cy="212" r="1.9"/>
+    <circle cx="236" cy="196" r="2.4"/><circle cx="224" cy="204" r="2.1"/>
+    <circle cx="248" cy="206" r="2.2"/><circle cx="230" cy="212" r="1.9"/>
+    <circle cx="192" cy="200" r="1.8"/><circle cx="208" cy="200" r="1.8"/>
+  </g>
+
+  <!-- eyes -->
+  <g>
+    <ellipse cx="170" cy="176" rx="15" ry="17" fill="#FFFFFF"/>
+    <ellipse cx="230" cy="176" rx="15" ry="17" fill="#FFFFFF"/>
+    <circle cx="171" cy="178" r="11" fill="#6BA3D6"/>
+    <circle cx="229" cy="178" r="11" fill="#6BA3D6"/>
+    <circle cx="171" cy="178" r="5.4" fill="#2E3E52"/>
+    <circle cx="229" cy="178" r="5.4" fill="#2E3E52"/>
+    <circle cx="167" cy="173" r="3.4" fill="#FFFFFF"/>
+    <circle cx="225" cy="173" r="3.4" fill="#FFFFFF"/>
+    <!-- lash lines -->
+    <path d="M155 166 q15 -11 30 -1" stroke="#4A2E63" stroke-width="4"
+          fill="none" stroke-linecap="round"/>
+    <path d="M215 165 q15 -10 30 1" stroke="#4A2E63" stroke-width="4"
+          fill="none" stroke-linecap="round"/>
+    <path d="M153 163 l-6 -6 M158 159 l-4 -8" stroke="#4A2E63" stroke-width="3"
+          stroke-linecap="round"/>
+    <path d="M247 163 l6 -6 M242 159 l4 -8" stroke="#4A2E63" stroke-width="3"
+          stroke-linecap="round"/>
+  </g>
+
+  <!-- brows -->
+  <path d="M155 145 q16 -7 31 -1" stroke="#D98A52" stroke-width="3.6"
+        fill="none" stroke-linecap="round" opacity=".9"/>
+  <path d="M214 144 q15 -6 31 1" stroke="#D98A52" stroke-width="3.6"
+        fill="none" stroke-linecap="round" opacity=".9"/>
+
+  <!-- nose + mouth -->
+  <path d="M198 200 q6 6 -2 10" stroke="#E0AE8E" stroke-width="3"
+        fill="none" stroke-linecap="round"/>
+  <path d="M182 222 q18 16 36 0 q-18 8 -36 0 Z" fill="#C4677A"/>
+  <path d="M182 222 q18 16 36 0" stroke="#A8506A" stroke-width="2.5" fill="none"/>
+
+  <!-- ===== hair front + bun ===== -->
+  <path d="M120 174 C118 106 154 66 200 66 C246 66 282 106 280 174
+           C272 140 258 122 236 116 C214 138 172 142 148 126
+           C136 138 126 152 120 174 Z" fill="url(#hairG)"/>
+  <!-- bun -->
+  <circle cx="200" cy="54" r="40" fill="url(#hairG)"/>
+  <path d="M172 40 q28 -16 56 4" stroke="#E8A06A" stroke-width="5"
+        fill="none" opacity=".65" stroke-linecap="round"/>
+  <path d="M170 62 q30 18 60 -2" stroke="#B85B2A" stroke-width="5"
+        fill="none" opacity=".5" stroke-linecap="round"/>
+  <!-- loose strand -->
+  <path d="M126 150 q-14 44 -4 84" stroke="#D2703A" stroke-width="7"
+        fill="none" stroke-linecap="round"/>
+
+  <!-- ===== sparkly headband ===== -->
+  <path d="M124 152 C136 96 168 76 200 76 C232 76 264 96 276 152"
+        stroke="#8B5FBF" stroke-width="15" fill="none" stroke-linecap="round"/>
+  <path d="M124 152 C136 96 168 76 200 76 C232 76 264 96 276 152"
+        stroke="#C9A9E3" stroke-width="5" fill="none" stroke-linecap="round" opacity=".75"/>
+  <g fill="#FBF7FD">
+    <circle cx="146" cy="118" r="2.8"/><circle cx="166" cy="98" r="2.8"/>
+    <circle cx="190" cy="87"  r="2.8"/><circle cx="214" cy="88" r="2.8"/>
+    <circle cx="238" cy="100" r="2.8"/><circle cx="256" cy="120" r="2.8"/>
+    <circle cx="132" cy="140" r="2.4"/><circle cx="269" cy="140" r="2.4"/>
+  </g>
+</svg>`;
+
+const CUPCAKE = `
+<svg viewBox="0 0 120 130" xmlns="http://www.w3.org/2000/svg">
+  <path d="M28 58 q32 -12 64 0 l-9 56 q-23 8 -46 0 Z" fill="#E4D2F0"/>
+  <path d="M36 68 l6 44 M52 66 l4 48 M68 66 l-4 48 M84 68 l-6 44"
+        stroke="#CBB2E2" stroke-width="3.5" fill="none"/>
+  <path d="M26 58 q10 -26 34 -22 q6 -20 26 -10 q22 6 12 32 Z" fill="#C9A9E3"/>
+  <path d="M30 52 q16 -14 34 -8 q18 -12 26 8" stroke="#B08FD0" stroke-width="3" fill="none"/>
+  <circle cx="60" cy="16" r="7" fill="#B98BA8"/>
+  <circle cx="42" cy="44" r="3" fill="#FBF7FD"/><circle cx="78" cy="40" r="3" fill="#FBF7FD"/>
+</svg>`;
+
+const COOKIE = `
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <path d="M60 8 a52 52 0 1 0 40 19 q-13 3 -19 -5 q-6 -8 -14 -6 q-8 2 -7 -8 Z"
+        fill="#D9B48F"/>
+  <g fill="#6E45A0">
+    <circle cx="44" cy="40" r="7"/><circle cx="72" cy="56" r="6"/>
+    <circle cx="38" cy="72" r="6"/><circle cx="64" cy="86" r="6.5"/>
+    <circle cx="88" cy="80" r="5.5"/><circle cx="52" cy="20" r="4.5"/>
+  </g>
+  <g fill="#C29A72" opacity=".55">
+    <circle cx="58" cy="60" r="3"/><circle cx="84" cy="46" r="2.6"/>
+    <circle cx="30" cy="52" r="2.6"/><circle cx="74" cy="96" r="2.6"/>
+  </g>
+</svg>`;
+
+/* ---------------- assemble ---------------- */
+const card = document.getElementById('card');
+if (I.bleed) card.classList.add('bleed');
+card.innerHTML = `
+  <div class="bloom a"></div><div class="bloom b"></div><div class="bloom c"></div>
+  <div class="inner">
+
+    <div class="masthead">
+      <div class="hightea">High<br>Tea</div>
+      <div class="party">party</div>
+    </div>
+
+    <div class="stage">
+      <div class="treat cupcake">${CUPCAKE}</div>
+      <div class="treat cookie">${COOKIE}</div>
+      <div class="side left">Join us<br>for a high<br>tea party</div>
+      <div class="side right">To celebrate<br><span class="big">${I.name}'s</span><br>${I.age} birthday</div>
+      <div class="girl">${GIRL}</div>
+    </div>
+
+    <div class="details">
+      <div class="hr"></div>
+      <div class="dateline">
+        <span>${I.day}</span><span class="num">${I.dayNum}</span><span>${I.month}</span>
+      </div>
+      <div class="hr"></div>
+      <div class="time">${I.time}</div>
+      <div class="venue">${I.venue}</div>
+      <div class="rsvp">${I.rsvp}</div>
+    </div>
+
+  </div>`;
+</script>

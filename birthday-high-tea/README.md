@@ -1,41 +1,46 @@
-# 10th Birthday High Tea — invitation template
+# Murphy's 10th — High Tea invitation
 
-`high-tea-invite.html` is the template. `invite-preview.png` shows it with empty photo slots.
+## The files
 
-## How to use it
+| File | What it is |
+|---|---|
+| `murphy-high-tea-a5.pdf` | **Print-ready A5, 148 x 210mm. Send this one to the printer.** |
+| `murphy-invite-preview.png` | High-res picture of it, for texting or posting |
+| `murphy-high-tea-a5.html` | The editable original. Open in Chrome, Ctrl+P, Save as PDF |
+| `high-tea-invite.html` | The earlier photo-based template, kept in case you want it |
 
-1. Put `high-tea-invite.html` in a folder on your computer.
-2. Drop the photos of her into the **same folder**.
-3. Open the HTML file in a text editor (Notepad works). Everything you edit is at the top, between the two comment lines. Nothing below that needs touching.
-4. Fill in the name, age, date, time, venue, address, RSVP and note.
-5. For the photos, type the exact file names, including `.jpg` or `.png`:
+## What's on it
 
-   ```
-   photoMain:  "murphy-1.jpg",
-   photoLeft:  "murphy-2.jpg",
-   photoRight: "murphy-3.jpg",
-   ```
+- Sunday 16 August, 2pm to 5pm, Prices Fresh Hillcrest
+- Purple throughout, Murphy's colour
+- Illustrated girl with Murphy's colouring: ginger hair up in a bun, sparkly headband, blue eyes, freckles
+- Cupcake and a chocolate chip cookie, like the inspo
 
-   Leave any of them as `""` and that slot shows a dashed outline instead.
-6. Save, then double-click the file to open it in Chrome.
+## Still needed
 
-## Getting it out
+The RSVP line currently reads **"RSVP TO SANDRA ON 0400 000 000 BY SUNDAY 9 AUGUST"**. Both the number and the cut-off date are placeholders.
 
-- **To print:** Ctrl+P, choose "Save as PDF", set margins to None and background graphics ON.
-- **To text or post it:** screenshot it, or right-click the card and Save Image.
+## To change anything
 
-## Photo tips
+Open `murphy-high-tea-a5.html` in a text editor. Everything editable is in the block at the very top:
 
-The frames are tall ovals, so portrait photos work best. Face roughly centred. The middle slot is the big one, so put the best photo there.
+```
+name:    "MURPHY",
+age:     "10th",
+day:     "SUNDAY",
+dayNum:  "16th",
+month:   "AUGUST",
+time:    "2PM - 5PM",
+venue:   "PRICES FRESH, HILLCREST",
+rsvp:    "RSVP TO SANDRA ON 0400 000 000 BY SUNDAY 9 AUGUST",
+bleed:   false,
+```
 
-## Colours
+Save, open in Chrome to check, then Ctrl+P and Save as PDF.
 
-Three palettes are listed in the file. Uncomment the one you want, or paste any hex codes into `bg`, `ink`, `accent`, `gold`.
+## For the printer
 
-- Rose and cream (currently set)
-- Sage and cream
-- Lilac and cream
-
-## Wording
-
-The defaults are placeholders. Change any of them. `script` is the small handwritten line above the name, `note` is the handwritten line near the bottom (currently "Frocks and fancy hats encouraged").
+- The PDF is already true A5 and fully vector, so it stays sharp at any size.
+- If the printer asks for **bleed**, set `bleed: true` in the file and re-save the PDF. That makes it 154 x 216mm, which is A5 plus 3mm all round, so the purple background runs off the edge with nothing white showing after trimming.
+- Ask for **A5, double sided: no, on 300gsm or heavier**. Matte or satin both suit this design.
+- When printing from Chrome: set Margins to **None** and turn **Background graphics ON**, or the purple wash disappears.
