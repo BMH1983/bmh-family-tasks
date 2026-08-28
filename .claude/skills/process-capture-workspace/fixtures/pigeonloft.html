@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Pigeonloft Mail</title>
+<style>
+  body{font-family:'Segoe UI',Arial,sans-serif;margin:0;background:#f7f5f0;color:#2b2b2b}
+  header{background:#4a3f8c;color:#fff;padding:14px 28px;display:flex;justify-content:space-between;align-items:center}
+  header h1{font-size:20px;margin:0}
+  main{max-width:960px;margin:28px auto;padding:0 20px;position:relative}
+  .view{display:none}.view.active{display:block}
+  h2{font-size:22px;margin:0 0 18px}
+  .btn{background:#6c5ce7;color:#fff;border:none;border-radius:6px;padding:10px 18px;font-size:15px;cursor:pointer}
+  .btn.secondary{background:#e8e4f5;color:#2b2b2b}
+  .tile{background:#fff;border-radius:10px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.08);max-width:420px}
+  .tile .n{font-size:34px;font-weight:700;color:#4a3f8c}
+  table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+  th,td{text-align:left;padding:12px 16px;border-bottom:1px solid #efece4;font-size:14px}
+  th{background:#fbfaf7;font-weight:600;color:#6b6455}
+  form{background:#fff;padding:26px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.08);max-width:520px}
+  label{display:block;font-size:13px;font-weight:600;color:#6b6455;margin:16px 0 6px}
+  input,select{width:100%;padding:10px;border:1px solid #d6d0c2;border-radius:6px;font-size:15px;box-sizing:border-box}
+  .sticky{position:absolute;top:150px;right:-10px;background:#fff6a8;padding:14px 16px;width:190px;font-size:13px;transform:rotate(2deg);
+    box-shadow:2px 3px 8px rgba(0,0,0,.2);font-family:'Comic Sans MS',cursive;line-height:1.5;pointer-events:none}
+  .pill{background:#d4edda;color:#1e6b34;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600}
+  .switchrow{display:flex;align-items:center;gap:10px;margin-top:20px;background:#fff;padding:16px;border-radius:8px;max-width:520px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+  .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+</style></head><body>
+<header><h1>Pigeonloft Mail</h1><div style="font-size:13px;opacity:.85">Village Circles workspace</div></header>
+<main>
+  <div class="sticky">shared login for the team inbox&mdash;<br>user: team@<br>pw: Butterfly!23</div>
+  <section id="home" class="view active">
+    <h2>Welcome back</h2>
+    <div class="tile"><div class="n">212</div>subscribers across 4 groups<br><br>
+      <button class="btn" id="openSubs">Open Subscribers</button></div>
+  </section>
+
+  <section id="subs" class="view">
+    <div class="topbar"><h2>Subscribers</h2><button class="btn" id="addSub">+ Add subscriber</button></div>
+    <table><thead><tr><th>Name</th><th>Email</th><th>Group</th><th>Status</th></tr></thead>
+    <tbody id="subRows">
+      <tr><td>Dana Whitfield</td><td>dana.w@example.com</td><td>New Members Aug</td><td><span class="pill">Active</span></td></tr>
+      <tr><td>Mel Torres</td><td>mel.t@example.com</td><td>Open Coffee</td><td><span class="pill">Active</span></td></tr>
+      <tr><td>Aisha Bakr</td><td>aisha.b@example.com</td><td>Newsletter</td><td><span class="pill">Active</span></td></tr>
+    </tbody></table>
+    <div class="switchrow" id="welcomeRow" style="display:none">
+      <input type="checkbox" id="welcomeToggle" style="width:auto">
+      <label for="welcomeToggle" style="margin:0">Queue welcome email for newest subscriber</label>
+      <span class="pill" id="queuedPill" style="display:none">Queued</span>
+    </div>
+  </section>
+
+  <section id="addForm" class="view">
+    <h2>Add subscriber</h2>
+    <form onsubmit="return false">
+      <label for="subName">Full name</label>
+      <input id="subName">
+      <label for="subEmail">Email address</label>
+      <input id="subEmail">
+      <label for="subGroup">Group</label>
+      <select id="subGroup">
+        <option value="">Choose a group...</option>
+        <option>New Members Aug</option>
+        <option>Open Coffee</option>
+        <option>Newsletter</option>
+      </select>
+      <div style="margin-top:22px"><button class="btn" id="saveSub">Save subscriber</button></div>
+    </form>
+  </section>
+</main>
+<script>
+  function show(id){document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));document.getElementById(id).classList.add('active')}
+  document.getElementById('openSubs').onclick=()=>show('subs');
+  document.getElementById('addSub').onclick=()=>show('addForm');
+  document.getElementById('saveSub').onclick=()=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML='<td>'+document.getElementById('subName').value+'</td><td>'+document.getElementById('subEmail').value+
+      '</td><td>'+document.getElementById('subGroup').value+'</td><td><span class="pill">Active</span></td>';
+    document.getElementById('subRows').prepend(tr);
+    document.getElementById('welcomeRow').style.display='flex';
+    show('subs');
+  };
+  document.getElementById('welcomeToggle')?.addEventListener('change',e=>{
+    document.getElementById('queuedPill').style.display=e.target.checked?'inline':'none';
+  });
+</script>
+</body></html>

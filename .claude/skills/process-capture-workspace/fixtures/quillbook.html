@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Quillbook Invoicing</title>
+<style>
+  body{font-family:'Segoe UI',Arial,sans-serif;margin:0;background:#f4f6f9;color:#1c2733}
+  header{background:#1c3d5a;color:#fff;padding:14px 28px;display:flex;justify-content:space-between;align-items:center}
+  header h1{font-size:20px;margin:0}
+  .user{font-size:13px;opacity:.85}
+  main{max-width:960px;margin:28px auto;padding:0 20px}
+  .view{display:none}.view.active{display:block}
+  h2{font-size:22px;margin:0 0 18px}
+  .btn{background:#2f80ed;color:#fff;border:none;border-radius:6px;padding:10px 18px;font-size:15px;cursor:pointer}
+  .btn.secondary{background:#e3e9f0;color:#1c2733}
+  table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+  th,td{text-align:left;padding:12px 16px;border-bottom:1px solid #eef1f5;font-size:14px}
+  th{background:#fafbfc;font-weight:600;color:#5a6b7b}
+  .chip{padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600}
+  .chip.draft{background:#fff3cd;color:#8a6d1a}.chip.sent{background:#d4edda;color:#1e6b34}
+  form{background:#fff;padding:26px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.08);max-width:560px}
+  label{display:block;font-size:13px;font-weight:600;color:#5a6b7b;margin:16px 0 6px}
+  input,textarea{width:100%;padding:10px;border:1px solid #cdd6e0;border-radius:6px;font-size:15px;box-sizing:border-box}
+  .confirm-card{background:#fff;border-radius:8px;padding:36px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+  .confirm-card .big{font-size:40px}
+  .invnum{font-size:26px;font-weight:700;color:#1c3d5a;margin:10px 0}
+  .toast{position:fixed;bottom:24px;right:24px;background:#1e6b34;color:#fff;padding:14px 22px;border-radius:8px;font-size:15px;display:none;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+  .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+</style></head><body>
+<header><h1>Quillbook Invoicing</h1><div class="user">Business Mums Hub Pty Ltd &middot; margie@ office login</div></header>
+<main>
+  <section id="dashboard" class="view active">
+    <div class="topbar"><h2>Invoices</h2><button class="btn" id="newInvoiceBtn">+ New Invoice</button></div>
+    <table><thead><tr><th>Invoice</th><th>Client</th><th>Amount</th><th>Due</th><th>Status</th><th></th></tr></thead>
+    <tbody id="invoiceRows">
+      <tr><td>INV-2042</td><td>Harbour Physio</td><td>$1,250.00</td><td>29/08/2026</td><td><span class="chip sent">Sent</span></td><td></td></tr>
+      <tr><td>INV-2041</td><td>Sunshine Cafe</td><td>$450.00</td><td>22/08/2026</td><td><span class="chip sent">Sent</span></td><td></td></tr>
+      <tr><td>INV-2040</td><td>Little Sprouts Daycare</td><td>$780.00</td><td>15/08/2026</td><td><span class="chip sent">Sent</span></td><td></td></tr>
+    </tbody></table>
+  </section>
+
+  <section id="newInvoice" class="view">
+    <h2>New Invoice</h2>
+    <form onsubmit="return false">
+      <label for="client">Client name (exactly as in the accounting system)</label>
+      <input id="client" placeholder="Start typing...">
+      <label for="amount">Amount (AUD)</label>
+      <input id="amount" placeholder="0.00">
+      <label for="due">Due date (DD/MM/YYYY)</label>
+      <input id="due" placeholder="DD/MM/YYYY">
+      <label for="desc">Description</label>
+      <textarea id="desc" rows="3"></textarea>
+      <div style="margin-top:22px"><button class="btn" id="saveInvoice">Save invoice</button></div>
+    </form>
+  </section>
+
+  <section id="confirmation" class="view">
+    <div class="confirm-card">
+      <div class="big">&#10004;</div>
+      <div class="invnum">INV-2043 created</div>
+      <p id="confirmDetail"></p>
+      <button class="btn secondary" id="backToList">Back to invoices</button>
+    </div>
+  </section>
+</main>
+<div class="toast" id="toast">PDF saved to Downloads</div>
+<script>
+  function show(id){document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));document.getElementById(id).classList.add('active')}
+  document.getElementById('newInvoiceBtn').onclick=()=>show('newInvoice');
+  document.getElementById('saveInvoice').onclick=()=>{
+    document.getElementById('confirmDetail').textContent=
+      document.getElementById('client').value+' — $'+document.getElementById('amount').value+' — due '+document.getElementById('due').value;
+    show('confirmation');
+  };
+  document.getElementById('backToList').onclick=()=>{
+    const tb=document.getElementById('invoiceRows');
+    const tr=document.createElement('tr');
+    tr.innerHTML='<td>INV-2043</td><td>'+document.getElementById('client').value+'</td><td>$'+document.getElementById('amount').value+
+      '</td><td>'+document.getElementById('due').value+'</td><td><span class="chip draft" id="newChip">Draft</span></td>'+
+      '<td><button class="btn secondary" id="markSent" style="padding:5px 10px;font-size:12px">Mark as sent</button> '+
+      '<button class="btn secondary" id="exportPdf" style="padding:5px 10px;font-size:12px">Export PDF</button></td>';
+    tb.prepend(tr); show('dashboard');
+    document.getElementById('markSent').onclick=()=>{const c=document.getElementById('newChip');c.textContent='Sent';c.className='chip sent'};
+    document.getElementById('exportPdf').onclick=()=>{const t=document.getElementById('toast');t.style.display='block';setTimeout(()=>t.style.display='none',3500)};
+  };
+</script>
+</body></html>

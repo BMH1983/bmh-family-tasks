@@ -1,0 +1,46 @@
+[
+  {
+    "t": 0.0,
+    "step": "page loaded"
+  },
+  {
+    "t": 6.1,
+    "step": "clicked New Invoice"
+  },
+  {
+    "t": 10.1,
+    "step": "typed client"
+  },
+  {
+    "t": 12.3,
+    "step": "typed amount"
+  },
+  {
+    "t": 14.8,
+    "step": "typed due date"
+  },
+  {
+    "t": 18.3,
+    "step": "typed description"
+  },
+  {
+    "t": 20.9,
+    "step": "clicked Save -> confirmation"
+  },
+  {
+    "t": 25.9,
+    "step": "back to invoice list"
+  },
+  {
+    "t": 28.9,
+    "step": "marked as sent"
+  },
+  {
+    "t": 32.9,
+    "step": "clicked Export PDF (toast)"
+  },
+  {
+    "t": 37.9,
+    "step": "end"
+  }
+]

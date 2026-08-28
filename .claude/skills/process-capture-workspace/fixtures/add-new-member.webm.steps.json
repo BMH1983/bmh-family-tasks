@@ -1,0 +1,38 @@
+[
+  {
+    "t": 0.0,
+    "step": "page loaded"
+  },
+  {
+    "t": 5.1,
+    "step": "opened Subscribers"
+  },
+  {
+    "t": 10.1,
+    "step": "clicked Add subscriber"
+  },
+  {
+    "t": 13.3,
+    "step": "typed name"
+  },
+  {
+    "t": 16.5,
+    "step": "typed email"
+  },
+  {
+    "t": 17.8,
+    "step": "chose group"
+  },
+  {
+    "t": 19.8,
+    "step": "saved -> back on list"
+  },
+  {
+    "t": 23.3,
+    "step": "queued welcome email"
+  },
+  {
+    "t": 27.3,
+    "step": "end"
+  }
+]
