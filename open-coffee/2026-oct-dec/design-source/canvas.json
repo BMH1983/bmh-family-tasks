@@ -1,0 +1,55 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "title": "Ray's Burnside 14 Oct - feed 4:5",
+      "x": 0,
+      "y": 0,
+      "w": 1600,
+      "h": 2000
+    },
+    {
+      "file": "RaysBurnsideCover.dc.html",
+      "title": "Ray's Burnside 14 Oct - Facebook event cover",
+      "x": 0,
+      "y": 2140,
+      "w": 1920,
+      "h": 1005
+    },
+    {
+      "file": "VintageChefFeed.dc.html",
+      "title": "Vintage Chef Co Evanston Park 25 Nov - feed 4:5",
+      "x": 2060,
+      "y": 0,
+      "w": 1600,
+      "h": 2000
+    },
+    {
+      "file": "VintageChefCover.dc.html",
+      "title": "Vintage Chef Co Evanston Park 25 Nov - Facebook event cover",
+      "x": 2060,
+      "y": 2140,
+      "w": 1920,
+      "h": 1005
+    },
+    {
+      "file": "PricesHillcrestFeed.dc.html",
+      "title": "Prices Fresh Hillcrest 9 Dec - feed 4:5",
+      "x": 4120,
+      "y": 0,
+      "w": 1600,
+      "h": 2000
+    },
+    {
+      "file": "PricesHillcrestCover.dc.html",
+      "title": "Prices Fresh Hillcrest 9 Dec - Facebook event cover",
+      "x": 4120,
+      "y": 2140,
+      "w": 1920,
+      "h": 1005
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}
