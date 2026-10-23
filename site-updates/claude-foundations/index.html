@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<!--
+  CLAUDE FOUNDATIONS, Wednesday 2 December 2026. The public sales page.
+
+  28 Sep 2026, Sandra's ruling: this page is the SEPTEMBER page again (the one
+  that sold Round 1 out, /learn-claude/ as deployed 12 Sep, deploy
+  6aa4c4963e51c807956a6a35), with the testimonials added. Only stale facts were
+  changed: the date, the seat count, the early bird lines, the payment plan
+  deadline. "This is the first ever Claude Foundations day, so round two won't
+  be $595." is cut because this IS round two.
+  Her new hero line: HAVE it all, not DO it all.
+  The payment plan sits where it did in September: a small "Or split it" link
+  in the hero, the plan BUTTON only down in GRAB YOUR SEAT.
+  NEVER bring back "It'll say subscription at the checkout, it stops after two
+  payments" (banned 21 Sep). Plan copy is the fact only.
+
+  Page order (Sandra yes, 28 Sep): hero, the problem (tomato), who it's for,
+  why we created this, eight things (the newer 21 Sep list), phone call, CRM
+  screenshot, Teagan, Nim, GRAB YOUR SEAT, FAQ'S (button back up to #seat).
+  "F*ck... I need to charge more" was removed on her ask.
+
+  Foundations and Claude Code live on completely separate pages (Sandra, 28 Sep).
+  No chooser, no "pick your day", no cross-selling. /learn-claude/,
+  /foundations-tickets/ and /waitlist/ redirect here (netlify.toml).
+
+  BUY LINKS (2 Dec): $795 plink_1USpSkCGG5LYDoepuzQ72e6i
+    https://buy.stripe.com/5kQdR89v1bQW3EOfTVd7q0Q
+  two payments of $425 plink_1USpSlCGG5LYDoepCeJYMDRk
+    https://buy.stripe.com/8x25kCcHd1cicbk379d7q0R
+  Caps are per link in Stripe, 20 each. Sandra watches the real count herself.
+
+  SEAT COUNT, search "SEATS" and update ALL together: the .marquee, the hero
+  aside-note, the price date block,
+  the #seat lede (spelled out), the last FAQ (visible AND schema), the sticky
+  .buy-bar. Plus the homepage COME LEARN CLAUDE bar.
+  28 Sep: Sandra's number, 4 gone, 16 left.
+  6 Oct: Sandra's number, 6 gone, 14 left. Same day, on her "night in Vegas"
+  call: the countdown clock, the chartreuse .seat-alert strip and the hero
+  pill were CUT. Ticker, buy bar and the HAVE/DO stickers stay.
+  URGENCY RULE (bmh-voice): counts, dates and plain facts only.
+-->
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Foundations · Wednesday 2 December · Claude Training in Adelaide</title>
+  <meta name="description" content="One day of hands-on Claude training for mums in business in Adelaide. Wednesday 2 December, Studio Safari, Norwood. Twenty seats. Walk out with Claude set up and working in your own business.">
+  <link rel="canonical" href="https://businessmumshub.com.au/claude-foundations/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Business Mums Hub">
+  <meta property="og:locale" content="en_AU">
+  <meta property="og:title" content="Claude Foundations · Wednesday 2 December · Adelaide">
+  <meta property="og:description" content="One day, hands on, your own laptop. Claude set up and working in your own business by the time you leave. Twenty seats, Studio Safari, Norwood.">
+  <meta property="og:url" content="https://businessmumshub.com.au/claude-foundations/">
+  <meta property="og:image" content="https://businessmumshub.com.au/img/foundations/room-23oct.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Claude Foundations · Wednesday 2 December · Adelaide">
+  <meta name="twitter:description" content="One day, hands on, your own laptop. Claude set up and working in your own business by the time you leave. Twenty seats, Studio Safari, Norwood.">
+  <meta name="twitter:image" content="https://businessmumshub.com.au/img/foundations/room-23oct.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Claude Foundations",
+    "description": "One day of hands-on Claude training for mums in business. Twenty seats. Walk out with Claude set up and doing real work in your business.",
+    "startDate": "2026-12-02T09:30:00+10:30",
+    "endDate": "2026-12-02T15:30:00+10:30",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "maximumAttendeeCapacity": 20,
+    "image": "https://businessmumshub.com.au/img/foundations/room-23oct.jpg",
+    "url": "https://businessmumshub.com.au/claude-foundations/",
+    "location": {
+      "@type": "Place",
+      "name": "Studio Safari",
+      "address": { "@type": "PostalAddress", "streetAddress": "10a King Street", "addressLocality": "Norwood", "addressRegion": "SA", "postalCode": "5067", "addressCountry": "AU" }
+    },
+    "offers": { "@type": "Offer", "price": "795.00", "priceCurrency": "AUD", "availability": "https://schema.org/InStock", "validFrom": "2026-09-28", "url": "https://businessmumshub.com.au/claude-foundations/" },
+    "organizer": { "@type": "Organization", "name": "Business Mums Hub", "url": "https://businessmumshub.com.au/" },
+    "performer": { "@type": "Person", "name": "Sandra Senn", "url": "https://businessmumshub.com.au/about/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "When and where is it?", "acceptedAnswer": { "@type": "Answer", "text": "Wednesday 2 December 2026, 9:30am to 3:30pm, at Studio Safari in Norwood." } },
+      { "@type": "Question", "name": "How much does it cost?", "acceptedAnswer": { "@type": "Answer", "text": "$795, and that includes GST, so that's the whole price." } },
+      { "@type": "Question", "name": "Can I pay in two goes?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. $425 now and $425 four weeks later." } },
+      { "@type": "Question", "name": "I tried ChatGPT and it was rubbish. Why is this different?", "acceptedAnswer": { "@type": "Answer", "text": "Honestly, if you used any AI and got rubbish results it's more likely how it was set up rather than the AI itself. If you used Claude without it being set up correctly, the results would likely be rubbish as well. This is literally what we teach so that you stop getting rubbish results." } },
+      { "@type": "Question", "name": "Does Claude cost money after the day?", "acceptedAnswer": { "@type": "Answer", "text": "Look, everything we teach can be used on the free version of Claude. It works really well, you will just hit the daily limit ALL the time. The next option is $34 a month, great for when you are in maintenance, or the $164 a month, which is what I am on, and it is plenty for when you are building and in a growth state. And you can move up and down plans as you see fit." } },
+      { "@type": "Question", "name": "Is my client data safe in Claude?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Nothing gets trained on unless you switch it on, deleted means deleted, and Claude only ever sees what you choose to give it." } },
+      { "@type": "Question", "name": "Do I need to be techy?", "acceptedAnswer": { "@type": "Answer", "text": "No. The day starts at setting Claude up from scratch and builds from there. If you can send an email, you're qualified." } },
+      { "@type": "Question", "name": "I've never used Claude, or any AI. Is that a problem?", "acceptedAnswer": { "@type": "Answer", "text": "No. The whole day is never-used-Claude friendly. Both myself and my team will be there on the day to help you hands on." } },
+      { "@type": "Question", "name": "Why only 20 seats?", "acceptedAnswer": { "@type": "Answer", "text": "Because it's hands on. Every woman in the room gets her own setup actually done on the day, and that doesn't work with 50 people." } },
+      { "@type": "Question", "name": "I already use ChatGPT. Is this still for me?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Moving everything useful from ChatGPT over to Claude is one of the eight things we do on the day." } },
+      { "@type": "Question", "name": "How much pre-work is there?", "acceptedAnswer": { "@type": "Answer", "text": "The pre-work is a conversation with Claude that builds your business bible. It will take as long as the amount of detail you put into it. To do a really good job will take about an hour. I work much better by voice, so I suggest doing it on your phone and just walking around answering the questions. However, if typing is your jam, that is perfect as well. The pre-work comes with instructions if you have never used Claude, and it can be done on the free version." } },
+      { "@type": "Question", "name": "Do I need to bring anything?", "acceptedAnswer": { "@type": "Answer", "text": "A fully charged laptop. That's it." } },
+      { "@type": "Question", "name": "Will there be food?", "acceptedAnswer": { "@type": "Answer", "text": "I'm Irish. The thought of you ever being hungry at one of my events is unthinkable, so yes, a stupid amount of food will be provided." } },
+      { "@type": "Question", "name": "What if I can't make it on the day?", "acceptedAnswer": { "@type": "Answer", "text": "If life happens, your ticket can go to a friend or be sold on, just let us know whose name to put on it. And if I ever have to cancel or move the day, you get your money back, obviously. No refunds for a change of mind though." } },
+      { "@type": "Question", "name": "What happens if I get stuck after the day?", "acceptedAnswer": { "@type": "Answer", "text": "We will also be having a Facebook group, so if you get stuck in the two weeks following the training, we can answer all your questions." } },
+      { "@type": "Question", "name": "When can I buy a seat?", "acceptedAnswer": { "@type": "Answer", "text": "Now. There are 20 tickets left." } }
+    ]
+  }
+  </script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F06038'/%3E%3Ctext x='32' y='46' font-family='Arial Black' font-size='38' fill='%23D6F74C' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preload" href="/fonts/bowlby-one-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/bmh.css">
+  <style>
+    .teagan-grid { display:grid; grid-template-columns:minmax(0,340px) minmax(0,1fr); gap:34px; align-items:center; }
+    .fave-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,300px); gap:36px; align-items:center; }
+    @media (max-width:760px) { .teagan-grid, .fave-grid { grid-template-columns:1fr; gap:24px; } }
+    .pop {
+      font-family:'Bowlby One', sans-serif; font-weight:400;
+      background:var(--tomato); color:var(--chartreuse);
+      font-size:1.34em; line-height:1;
+      padding:5px 13px 7px; border-radius:6px;
+      display:inline-block; margin:0 3px;
+      box-shadow:3px 3px 0 var(--ink);
+    }
+    .pop-a { transform:rotate(-2.5deg); }
+    .pop-b { transform:rotate(2deg); }
+    .have-line { line-height:1.75; max-width:560px; font-size:clamp(20px, 2.6vw, 26px); font-weight:700; margin:24px 0 0; }
+    .problem-block { background:var(--tomato); color:var(--ink); border-top:3px solid var(--ink); border-bottom:3px solid var(--ink); padding:clamp(56px, 8vw, 96px) 0; }
+    .problem-block .kicker::before { color:var(--chartreuse); }
+    .problem-block h2 { color:var(--ink); }
+    .problem-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,320px); gap:40px; align-items:center; margin-top:10px; }
+    @media (max-width:760px) { .problem-grid { grid-template-columns:1fr; gap:28px; } }
+    .editorial.quote-light { background:var(--apricot); color:var(--ink); }
+    .editorial.quote-light blockquote .em { color:var(--tomato); }
+    .editorial.quote-light figcaption { color:var(--ink); }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D7RHZHH4B7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-D7RHZHH4B7');
+  </script>
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '734975110554238');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=734975110554238&amp;ev=PageView&amp;noscript=1" alt=""></noscript>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- MARQUEE. SEATS -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>CLAUDE FOUNDATIONS <b>·</b></span><span>WEDNESDAY 2 DECEMBER <b>·</b></span><span>STUDIO SAFARI NORWOOD <b>·</b></span><span>20 SEATS LEFT <b>·</b></span><span>CLAUDE FOUNDATIONS <b>·</b></span><span>WEDNESDAY 2 DECEMBER <b>·</b></span><span>STUDIO SAFARI NORWOOD <b>·</b></span><span>20 SEATS LEFT <b>·</b></span><span>CLAUDE FOUNDATIONS <b>·</b></span><span>WEDNESDAY 2 DECEMBER <b>·</b></span><span>STUDIO SAFARI NORWOOD <b>·</b></span><span>20 SEATS LEFT <b>·</b></span><span>CLAUDE FOUNDATIONS <b>·</b></span><span>WEDNESDAY 2 DECEMBER <b>·</b></span><span>STUDIO SAFARI NORWOOD <b>·</b></span><span>20 SEATS LEFT <b>·</b></span>
+    </div>
+  </div>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a class="wordmark" href="/">BUSINESS MUMS HUB</a>
+    <nav class="navlinks">
+      <a href="/about/">About</a>
+      <a href="/open-coffee/">Wanna Grab a Coffee?</a>
+      <a href="/village-circles/">Village Circles</a>
+      <a href="/blog/">Blog</a>
+      <a href="/free-guide/">Free Guide</a>
+      <a class="btn small active" href="#seat">COME LEARN CLAUDE.</a>
+    </nav>
+  </header>
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <h1>
+            <span class="line"><span>CLAUDE</span></span>
+            <span class="line"><span class="accent">FOUNDATIONS.</span></span>
+          </h1>
+          <p class="have-line">You started a business to <span class="pop pop-a">HAVE</span> it all, not <span class="pop pop-b">DO</span> it all.</p>
+          <p class="lede" style="margin:26px 0 30px;">Claude is an incredible tool that can take a lot of tasks off your hands (aka all the boring stuff), create amazing apps and websites (like this one) and even edit your reels and videos. It can also give you sh*t copy, remove all your personality and be ridiculously frustrating if you haven't set it up correctly....... and that is what this day is about.</p>
+          <div class="cta-row">
+            <a class="btn" href="https://buy.stripe.com/5kQdR89v1bQW3EOfTVd7q0Q" data-checkout="full" data-checkout-value="795" rel="noopener">GRAB YOUR SEAT: $795</a>
+            <!-- SEATS -->
+            <p class="aside-note">20 tickets left
+              <svg width="70" height="40" viewBox="0 0 70 40" aria-hidden="true"><path d="M8 6 C 26 10, 44 22, 54 34 M 40 32 l 15 4 -2 -15"/></svg>
+            </p>
+          </div>
+          <p class="microcopy" style="text-align:left; margin-top:12px; opacity:1;"><a href="#seat" style="color:inherit; font-weight:700; text-decoration:underline;">Or split it: 2 x $425</a></p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:34px; align-items:center;">
+          <div class="date-block">
+            <p class="dow">WEDNESDAY</p>
+            <p class="day">2 DEC</p>
+            <p class="rest">9:30am to 3:30pm &middot; Studio Safari, Norwood &middot; 20 seats</p>
+          </div>
+          <!-- SEATS -->
+          <div class="date-block">
+            <p class="dow">YOUR SEAT</p>
+            <p class="day">$795</p>
+            <p class="rest">20 tickets left</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE PROBLEM -->
+    <!-- Tomato block, not ink. Ink is text only, never a background (Sandra, 28 Sep: "I don't like the colour of this"). -->
+    <section class="problem-block">
+      <div class="wrap reveal">
+        <p class="kicker">The problem</p>
+        <h2>EVERYONE'S TALKING ABOUT AI. <span style="color:var(--chartreuse);">NOBODY'S SHOWING YOU.</span></h2>
+        <div class="problem-grid">
+          <div style="max-width:680px; display:grid; gap:18px; font-size:18px; font-weight:500;">
+            <p>We have all used the prompt that promised to make us 1 million dollars in 30 seconds, and honestly most of the responses that come from generic prompts look amazing, until you actually try and use them.</p>
+            <p>That's when you realise that most of it is rubbish and nothing to do with your business, how you sound, or anything you would actually do.</p>
+            <p>The problem is that Claude just doesn't have the details or content that it needs to do a great job. Without them Claude will simply make things up, it will guess, and it will be wrong.</p>
+          </div>
+          <!-- Kirsty's K35 (gallery CT_(36)), 18 Sep room. Sandra's pick 28 Sep. Face turned away. Not colour graded. -->
+          <div class="photo-block" style="margin:0;">
+            <img src="/img/foundations/hand-on-back-23oct.jpg" alt="Sandra with her hand on the back of a woman at her laptop during the Claude Foundations day in Norwood" width="1024" height="1536" loading="lazy" style="box-shadow:12px 12px 0 var(--chartreuse);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO IT'S FOR -->
+    <section>
+      <div class="wrap hero-grid">
+        <div class="reveal">
+          <p class="kicker">Who it's for</p>
+          <h2>MUMS RUNNING REAL BUSINESSES.</h2>
+          <div style="display:grid; gap:18px; max-width:600px;">
+            <p>This day is for you if you genuinely want to get Claude working in your business. You need to understand that setting up AI is not a miracle fix, it needs effort on your part. It's not hard but it's not a one and done. You can't expect to upload one sample of writing and think that Claude will be able to write just like you.</p>
+            <p>I know that you have been promised that in every reel out there but it's just not true.</p>
+            <p>It needs time to learn, just like you need time to learn it.</p>
+            <p>So if you want to use Claude in your business and you want to do it in a way that will actually work. This training is for you.</p>
+          </div>
+        </div>
+        <div class="reveal aside-wrap">
+          <div class="photo-block">
+            <img src="/img/room-wide.jpg" alt="A full room of women at cafe tables during a Business Mums Hub event in Adelaide" width="1024" height="683" loading="lazy">
+          </div>
+          <p class="aside-note" style="margin-top:22px; justify-content:flex-end;">December, sorted
+            <svg width="70" height="40" viewBox="0 0 70 40" aria-hidden="true"><path d="M8 34 C 26 30, 44 18, 54 6 M 40 8 l 15 -4 -2 15"/></svg>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY WE CREATED THIS -->
+    <section style="padding-top:0;">
+      <div class="wrap hero-grid">
+        <div class="reveal">
+          <p class="kicker">Why we created this</p>
+          <h2>I HAVE NEVER BUILT A WEBSITE <span class="hl">BEFORE.</span></h2>
+          <div style="display:grid; gap:18px; max-width:680px; margin-top:10px;">
+            <p>I'm Sandra. I run Business Mums Hub. And I have never built a website before.... and that is still true. Claude built this whole site for me, and whenever I need to make a change, all I need to do is message Claude.</p>
+            <p>I have also been the wrecked mum in business trying to watch a million online trainings, all of them either go right over my head or I find myself not listening and rabbit-holing down Insta instead.</p>
+            <p>So that is why we created this. To hold your hand when you are finding it tough, and cheer for you when it all clicks. All the training is done directly in your business so you are not trying to figure out their examples and you are building while you learn.</p>
+            <p>No more training high, to return home and forget everything before you have even had a chance to implement anything.</p>
+            <p>We have 20 mums in business who we teach Claude to every month across Adelaide. We understand that not everyone can give up that time, and so we created a full day of Claude to fast track your learning.</p>
+          </div>
+        </div>
+        <div class="reveal aside-wrap">
+          <div class="photo-block">
+            <img src="/img/sandra-laugh.jpg" alt="Sandra Senn, who teaches Claude Foundations in Adelaide, laughing in a cafe, hands in pockets" width="1024" height="1536" loading="lazy">
+          </div>
+          <p class="aside-note" style="margin-top:22px; justify-content:flex-end;">Sandra, your trainer
+            <svg width="70" height="40" viewBox="0 0 70 40" aria-hidden="true"><path d="M8 34 C 26 30, 44 18, 54 6 M 40 8 l 15 -4 -2 15"/></svg>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE DAY -->
+    <section style="padding-top:0;">
+      <div class="wrap">
+        <hr class="rule reveal-rule" style="margin-bottom:40px;">
+        <p class="kicker reveal">The day</p>
+        <h2 class="reveal">EIGHT THINGS YOU WALK OUT HAVING <span class="hl">DONE.</span></h2>
+        <p class="lede reveal" style="margin-bottom:36px;">Not eight things you hear about. Eight things that are actually done, not just talked about.</p>
+        <div class="outcomes stagger">
+          <!-- The newer eight (21 Sep), put back on Sandra's ask 28 Sep. -->
+          <div class="outcome"><div><strong>Your business bible, built.</strong><p>Pre-work you can talk instead of type.</p></div></div>
+          <div class="outcome"><div><strong>Claude set up properly.</strong><p>Your account, your settings, done right the first time.</p></div></div>
+          <div class="outcome"><div><strong>Your projects set up.</strong><p>So Claude remembers instead of you repeating yourself.</p></div></div>
+          <div class="outcome"><div><strong>Moved over from ChatGPT.</strong><p>Everything useful comes across with you.</p></div></div>
+          <div class="outcome"><div><strong>Your first skill built: your voice.</strong><p>The one you will use the most.</p></div></div>
+          <div class="outcome"><div><strong>Connected to the things you already use.</strong><p>Your email, your calendar, your files.</p></div></div>
+          <div class="outcome"><div><strong>You'll know when it's lying.</strong><p>Which it absolutely will. You'll learn to stress test what it gives you.</p></div></div>
+          <div class="outcome"><div><strong>Your first automation, set up.</strong><p>Getting Claude to manage your emails.</p></div></div>
+        </div>
+        <a class="btn reveal" href="https://buy.stripe.com/5kQdR89v1bQW3EOfTVd7q0Q" data-checkout="full" data-checkout-value="795" rel="noopener" style="margin-top:34px; display:inline-block;">GRAB YOUR SEAT: $795</a>
+      </div>
+    </section>
+
+    <!-- THE PHONE CALL. Sandra 21 Sep: "what mums like the most", sits AFTER the eight things. Put back 28 Sep. -->
+    <section style="padding-top:0;">
+      <div class="wrap">
+        <div class="reveal fave-grid" style="background:var(--vista); border-radius:18px; padding:clamp(28px,4vw,46px);">
+          <div>
+            <h2 style="margin-bottom:22px;">YOU CAN HAVE A <span class="hl">&ldquo;PHONE CALL&rdquo;</span> WITH CLAUDE.</h2>
+            <div style="display:grid; gap:16px; font-size:19px;">
+              <p>Get it to create documents, respond to emails and even plan your content, all while you are driving.</p>
+              <p style="font-weight:700;">This is honestly my favourite part and we will also be covering this on the day!</p>
+            </div>
+          </div>
+          <div class="photo-block" style="margin:0;">
+            <img src="/img/foundations/sandra-23oct.jpg" alt="Sandra, smiling, in front of a blue wall" width="1024" height="1536" loading="lazy" style="box-shadow:12px 12px 0 var(--chartreuse);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANOTHER MUM I MADE SWAP (CRM screenshot) -->
+    <section style="padding-top:0;">
+      <div class="wrap" style="display:block;">
+        <hr class="rule reveal-rule" style="margin-bottom:40px;">
+        <!-- "F*CK... I NEED TO CHARGE MORE." and its two paragraphs removed on Sandra's ask, 28 Sep. The CRM screenshot stays (testimonial). -->
+        <div class="reveal" style="max-width:620px; margin-bottom:30px;">
+          <p class="aside-note" style="margin-bottom:14px;">Another mum I made swap to Claude:</p>
+          <img src="/img/crm-comment.png" alt="Message from another mum Sandra made swap to Claude: I have finally played with the artifact and cowork stuff in Claude. Wow just wow. I built a full CRM and am getting rid of Dubsado." width="577" height="143" loading="lazy" style="max-width:577px; width:100%; height:auto; background:#fff; border-radius:14px; padding:14px; box-shadow:4px 4px 0 var(--ink);">
+        </div>
+        <a class="btn reveal" href="https://buy.stripe.com/5kQdR89v1bQW3EOfTVd7q0Q" data-checkout="full" data-checkout-value="795" rel="noopener">GRAB YOUR SEAT: $795</a>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL: TEAGAN, from the September room -->
+    <section style="padding-top:0;">
+      <div class="wrap">
+        <hr class="rule reveal-rule" style="margin:40px 0;">
+        <p class="kicker reveal">From the September room</p>
+        <h2 class="reveal" style="margin-bottom:14px;">TEAGAN ATTENDED OUR <span class="hl">FIRST TRAINING.</span></h2>
+        <p class="lede reveal" style="margin-bottom:30px;">Here is what she said about it.</p>
+        <div class="reveal teagan-grid">
+          <div class="photo-block blue" style="margin:0;">
+            <video src="/video/teagan.mp4" poster="/video/teagan-poster.jpg" width="900" height="1125" controls muted playsinline preload="metadata" style="display:block; width:100%; height:auto;">
+              <track kind="captions" src="/video/teagan.vtt" srclang="en" label="English" default>
+            </video>
+          </div>
+          <figure style="margin:0;">
+            <span class="qmark" aria-hidden="true">&ldquo;</span>
+            <blockquote>The amount of time that can save you, whether you're in business, starting a business or just a busy mum that needs help with everyday life and list making and prioritising things. <span class="em">Claude is going to get you there, I promise.</span></blockquote>
+            <figcaption>Teagan &middot; <a href="https://www.vintagechefco.com.au/" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline; text-underline-offset:3px;">Vintage Chef Co</a></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- IN HER WORDS -->
+    <section class="editorial quote-light">
+      <div class="wrap">
+        <figure class="reveal">
+          <span class="qmark" aria-hidden="true">&ldquo;</span>
+          <blockquote>You hold our hands, Sandra, <span class="em">and make the learning so much easier.</span></blockquote>
+          <figcaption>Nim &middot; Posey.Skin</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- GRAB YOUR SEAT -->
+    <section id="seat">
+      <div class="wrap hero-grid">
+        <div class="reveal">
+          <p class="kicker">The one thing to do</p>
+          <h2>GRAB YOUR SEAT.</h2>
+          <!-- SEATS -->
+          <p class="lede" style="margin-bottom:26px;">Claude Foundations, Wednesday 2 December, 9:30 to 3:30 at Studio Safari in Norwood. Twenty seats in the room.</p>
+          <div class="reveal" style="margin-bottom:30px;">
+            <p style="font-weight:700; margin-bottom:12px;">Your seat includes:</p>
+            <ul style="list-style:none; padding:0; margin:0; display:grid; gap:9px; font-size:16px;">
+              <li><span style="color:var(--tomato); font-weight:700;">&#10003;</span> The full day, hands on, with myself and my team there to help you</li>
+              <li><span style="color:var(--tomato); font-weight:700;">&#10003;</span> The pre-work: a conversation with Claude that builds your business bible, sent before the day</li>
+              <li><span style="color:var(--tomato); font-weight:700;">&#10003;</span> The eight things, actually done before you leave</li>
+              <li><span style="color:var(--tomato); font-weight:700;">&#10003;</span> A stupid amount of food</li>
+              <li><span style="color:var(--tomato); font-weight:700;">&#10003;</span> Two weeks of Facebook group support after the day</li>
+            </ul>
+          </div>
+          <div class="form-card">
+            <a class="btn submit-btn" href="https://buy.stripe.com/5kQdR89v1bQW3EOfTVd7q0Q" data-checkout="full" data-checkout-value="795" rel="noopener" style="display:block; text-align:center;">GRAB YOUR SEAT: $795</a>
+            <p class="microcopy" style="margin-top:14px; margin-bottom:10px;">$795, GST included.</p>
+            <p class="microcopy" style="margin-top:0; margin-bottom:24px;">If life happens, your ticket can go to a friend or be sold on. And if I ever have to cancel or move the day, you get your money back, obviously. No refunds for a change of mind though.</p>
+
+            <p style="text-align:center; font-weight:700; font-size:15px; margin-bottom:8px;">Or split it in two.</p>
+            <p class="microcopy" style="margin-top:0; margin-bottom:12px;">$425 now and $425 four weeks later.</p>
+            <a class="btn btn-outline submit-btn" href="https://buy.stripe.com/8x25kCcHd1cicbk379d7q0R" data-checkout="plan" data-checkout-value="425" rel="noopener" style="display:block; text-align:center;">SPLIT IT: 2 x $425</a>
+          </div>
+        </div>
+        <div class="reveal aside-wrap">
+          <div class="photo-block blue">
+            <img src="/img/sandra-cheeky.jpg" alt="Sandra pulling a cheeky face in a shopping mall" width="1024" height="1536" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+      <div class="wrap">
+        <p class="kicker reveal">Questions</p>
+        <h2 class="reveal"><span class="hl">FAQ'S</span></h2>
+        <div class="faq reveal">
+          <details>
+            <summary>When and where is it?</summary>
+            <p>Wednesday 2 December 2026, 9:30am to 3:30pm, at Studio Safari in Norwood.</p>
+          </details>
+          <details>
+            <summary>How much does it cost?</summary>
+            <p>$795, and that includes GST, so that's the whole price.</p>
+          </details>
+          <details>
+            <summary>Can I pay in two goes?</summary>
+            <p>Yes. $425 now and $425 four weeks later.</p>
+          </details>
+          <details>
+            <summary>I tried ChatGPT and it was rubbish. Why is this different?</summary>
+            <p>Honestly, if you used any AI and got rubbish results it's more likely how it was set up rather than the AI itself. If you used Claude without it being set up correctly, the results would likely be rubbish as well. This is literally what we teach so that you stop getting rubbish results.</p>
+          </details>
+          <details>
+            <summary>Does Claude cost money after the day?</summary>
+            <p>Look, everything we teach can be used on the free version of Claude. It works really well, you will just hit the daily limit ALL the time. The next option is $34 a month, great for when you are in maintenance, or the $164 a month, which is what I am on, and it is plenty for when you are building and in a growth state. And you can move up and down plans as you see fit.</p>
+          </details>
+          <details>
+            <summary>Is my client data safe in Claude?</summary>
+            <p>Yes. Nothing gets trained on unless you switch it on, deleted means deleted, and Claude only ever sees what you choose to give it.</p>
+          </details>
+          <details>
+            <summary>Do I need to be techy?</summary>
+            <p>No. The day starts at setting Claude up from scratch and builds from there. If you can send an email, you're qualified.</p>
+          </details>
+          <details>
+            <summary>I've never used Claude, or any AI. Is that a problem?</summary>
+            <p>No. The whole day is never-used-Claude friendly. Both myself and my team will be there on the day to help you hands on.</p>
+          </details>
+          <details>
+            <summary>Why only 20 seats?</summary>
+            <p>Because it's hands on. Every woman in the room gets her own setup actually done on the day, and that doesn't work with 50 people.</p>
+          </details>
+          <details>
+            <summary>I already use ChatGPT. Is this still for me?</summary>
+            <p>Yes. Moving everything useful from ChatGPT over to Claude is one of the eight things we do on the day.</p>
+          </details>
+          <details>
+            <summary>How much pre-work is there?</summary>
+            <p>The pre-work is a conversation with Claude that builds your business bible. It will take as long as the amount of detail you put into it. To do a really good job will take about an hour. I work much better by voice, so I suggest doing it on your phone and just walking around answering the questions. However, if typing is your jam, that is perfect as well. The pre-work comes with instructions if you have never used Claude, and it can be done on the free version.</p>
+          </details>
+          <details>
+            <summary>Do I need to bring anything?</summary>
+            <p>A fully charged laptop. That's it.</p>
+          </details>
+          <details>
+            <summary>Will there be food?</summary>
+            <p>I'm Irish. The thought of you ever being hungry at one of my events is unthinkable, so yes, a stupid amount of food will be provided.</p>
+          </details>
+          <details>
+            <summary>What if I can't make it on the day?</summary>
+            <p>If life happens, your ticket can go to a friend or be sold on, just let us know whose name to put on it. And if I ever have to cancel or move the day, you get your money back, obviously. No refunds for a change of mind though.</p>
+          </details>
+          <details>
+            <summary>What happens if I get stuck after the day?</summary>
+            <p>We will also be having a Facebook group, so if you get stuck in the two weeks following the training, we can answer all your questions.</p>
+          </details>
+          <!-- SEATS -->
+          <details>
+            <summary>When can I buy a seat?</summary>
+            <p>Now. There are 20 tickets left.</p>
+          </details>
+        </div>
+        <a class="btn reveal" href="#seat" style="margin-top:34px; display:inline-block;">GRAB YOUR SEAT</a>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="tagline-bar">
+    <p>no mum on her own.</p>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <p class="fw">BUSINESS MUMS HUB</p>
+        <p>Adelaide, South Australia</p>
+        <a class="built-by" href="/claude-code/"><b>BUILT BY CLAUDE</b><br>Sandra said what she wanted. Claude wrote every line of this site. Come learn how.</a>
+      </div>
+      <div>
+        <p class="fw">PAGES</p>
+        <ul>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/open-coffee/">Wanna Grab a Coffee?</a></li>
+          <li><a href="/village-circles/">Village Circles</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/free-guide/">Free Guide</a></li>
+          <li><a href="/claude-foundations/">Claude Foundations</a></li>
+          <li><a href="/claude-code/">Claude Code</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="fw">ELSEWHERE</p>
+        <ul>
+          <li><a href="https://www.instagram.com/businessmumshub" target="_blank" rel="noopener">Instagram @businessmumshub</a></li>
+          <li><a href="https://village.businessmumshub.com.au" target="_blank" rel="noopener">Village Circles Hub</a></li>
+          <li><a href="mailto:admin@businessmumshub.com.au">admin@businessmumshub.com.au</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <p>&copy; 2026 Business Mums Hub &middot; no mum on her own. &middot; <a href="/privacy/">Privacy</a></p>
+    </div>
+  </footer>
+
+  <!-- Sticky buy bar, phones only. SEATS -->
+  <div class="buy-bar">
+    <p>20 tickets left<br><a href="#seat" style="color:inherit; font-weight:700; text-decoration:underline;">or 2 x $425</a></p>
+    <a class="btn" href="https://buy.stripe.com/5kQdR89v1bQW3EOfTVd7q0Q" data-checkout="full" data-checkout-value="795" rel="noopener">GRAB YOUR SEAT</a>
+  </div>
+
+  <script src="/js/bmh.js"></script>
+</body>
+</html>
